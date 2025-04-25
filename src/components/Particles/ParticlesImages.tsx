@@ -1,10 +1,8 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from 'react';
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadImageShape } from "@tsparticles/shape-image";
 import { loadSlim } from "@tsparticles/slim";
 import { particlesLoaded } from "../../functions/cargarParticulas";
-
-/* VER EN CHATGPT COMO REDIRIGIR!!!!!!!!!! */
 
 export function ParticlesImages({
   backColor,

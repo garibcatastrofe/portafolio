@@ -3,3 +3,33 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  background-color: #fff;
+  @apply font-poppins;
+}
+
+@layer utilities {
+  /* Estilos para el scroll en navegadores WebKit (Chrome, Edge, Safari) */
+
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #316D35;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #61985D;
+    border-radius: 10px;
+  }
+
+  /* Ocultar flechas en WebKit (Chrome, Safari, Edge) */
+  .no-arrows::-webkit-inner-spin-button,
+  .no-arrows::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}

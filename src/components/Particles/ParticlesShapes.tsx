@@ -24,7 +24,7 @@ export function ParticlesShapes({
   }, []);
 
   return (
-    <div className="relative w-full h-screen overflow-hidden">
+    <div className="relative w-full h-full overflow-hidden">
       {init && (
         <Particles
           id={idContainer}
@@ -57,7 +57,7 @@ export function ParticlesShapes({
                 value: 100,
               },
               opacity: {
-                value: { min: 0.1, max: 0.4 },
+                value: { min: 0.3, max: 0.5 },
                 animation: {
                   enable: true,
                   speed: 0.5,
@@ -108,9 +108,9 @@ export function ParticlesShapes({
           /* particlesLoaded={particlesLoaded} */
         />
       )}
-      <div className="absolute top-0 left-0 z-10 flex items-center justify-center w-full h-full">
+      {/* <div className="absolute top-0 left-0 z-10 flex items-center justify-center w-full h-full">
         <p className="text-4xl font-bold text-white">FIGURAS</p>
-      </div>
+      </div> */}
     </div>
   );
 }

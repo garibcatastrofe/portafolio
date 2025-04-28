@@ -1,10 +1,7 @@
-export function Experience({
-  referencia,
-}: {
-  referencia: React.RefObject<HTMLElement | null>;
-}) {
+export function Experience() {
   return (
-    <section className="bg-orange-600" id="seccion2" ref={referencia}>
+    <section className="bg-orange-600 pt-14" id="Experiencia">
+      <h2>EXPERIENCIA</h2>
       <p className="text-xl font-semibold text-white">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi obcaecati
         officia reprehenderit iure, unde, autem id similique ducimus quo

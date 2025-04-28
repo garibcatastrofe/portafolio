@@ -1,9 +1,7 @@
-import { ParticlesImages } from "../Particles/ParticlesImages";
-
-export function Presentation() {
+export function Proyects() {
   return (
-    <section className="w-full bg-red-600 h-fit pt-14" id="Sobre mí">
-      <h2>SOBRE MÍ</h2>
+    <section className="bg-pink-600 pt-14" id="Proyectos">
+      <h2>PROYECTOS</h2>
       <p className="text-xl font-semibold text-white">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi obcaecati
         officia reprehenderit iure, unde, autem id similique ducimus quo
@@ -67,10 +65,43 @@ export function Presentation() {
         molestiae, ducimus, dolore est corrupti reprehenderit voluptatibus ipsam
         consectetur deleniti ab quam pariatur porro. Repellat repudiandae quidem
         libero, vel quasi aut dolorum nihil ad, fugit consectetur est eaque
+        quae? Nulla iste obcaecati, facere quae officia aliquid. Est dicta
+        doloremque nulla repudiandae, quibusdam natus libero facere unde dolorum
+        eaque, alias, non consequatur repellat quam repellendus atque id
+        adipisci explicabo eveniet! Tempore minima aliquam assumenda quibusdam,
+        fugiat eligendi vitae ab placeat. Nemo earum, corrupti alias, assumenda
+        nam unde quod veritatis, a aspernatur incidunt quisquam dolores non quo
+        esse itaque quis molestias! Asperiores voluptatem a perferendis
+        voluptatum ipsam aspernatur voluptatibus sed iste ab illum debitis ipsa
+        similique reprehenderit, dolorum quo, accusantium nobis, alias facere
+        animi quas dolore fugit in corrupti! Unde, fugiat? Quo modi voluptates
+        in ratione inventore praesentium quae, mollitia atque distinctio
+        quisquam, est nemo eaque quia, eveniet nostrum odio similique iusto
+        autem reprehenderit harum optio qui. Amet culpa quaerat quam. Nisi nihil
+        repudiandae laborum, id aliquam soluta ipsa fugit aspernatur officiis
+        sunt fugiat, ex corporis eligendi. Sint culpa porro, minus explicabo
+        obcaecati, est similique veritatis ab architecto itaque velit rem. Cum
+        modi officia ipsum, sequi sed veniam nobis blanditiis fuga minima ea
+        soluta delectus quam tenetur culpa doloribus exercitationem, iste
+        suscipit accusamus error impedit. Nisi nemo pariatur rerum illo minus?
+        Magni, numquam optio dolor reiciendis hic nulla maiores asperiores, fuga
+        deserunt corporis ad facere odit reprehenderit id nihil assumenda!
+        Impedit explicabo a voluptatum dolore optio similique quia quasi unde
+        suscipit. Voluptatum magnam, veniam sed, veritatis facilis odio nulla
+        placeat saepe ducimus quisquam nesciunt reiciendis soluta, cum
+        distinctio cupiditate tempore! Ipsa doloremque, eum velit sit
+        perspiciatis non dolor eius magnam omnis? Consequuntur quidem reiciendis
+        eos odit ullam dolorum! Voluptas, atque! Dolores modi nobis voluptatibus
+        dolorem animi? Nisi, minus distinctio! Rem excepturi soluta harum
+        voluptatibus fugit voluptatum explicabo in incidunt perspiciatis
+        debitis! Voluptatem error sit laudantium architecto totam? Sunt impedit,
+        quod voluptatibus id iusto illo eum expedita, dolores pariatur cumque
+        porro nostrum maiores vero, saepe aspernatur. Maiores id non laborum
+        numquam pariatur. Impedit dicta mollitia, tempora molestias deserunt
+        dignissimos assumenda eos, ratione sequi reiciendis quam natus
+        blanditiis ipsum iure magni? Obcaecati eos expedita optio voluptatibus
+        ab dolores consectetur error ad voluptatum recusandae?
       </p>
-      <div className="relative z-40 w-full h-full bg-red-900">
-        <ParticlesImages backColor="#000" idContainer="contenedorImagenes1" />
-      </div>
     </section>
   );
 }

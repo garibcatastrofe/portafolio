@@ -19,6 +19,7 @@ export function ParticlesImages({
       await loadImageShape(engine);
     }).then(() => {
       setInit(true);
+      console.log("Montado!!")
     });
   }, []);
 
@@ -77,9 +78,6 @@ export function ParticlesImages({
           particlesLoaded={particlesLoaded}
         />
       )}
-      <div className="absolute top-0 left-0 z-10 flex items-center justify-center w-full h-full">
-        <p className="text-4xl font-bold text-white">IMÁGENES</p>
-      </div>
     </div>
   );
 }

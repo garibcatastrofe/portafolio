@@ -16,17 +16,22 @@ body {
 @layer utilities {
   /* Estilos para el scroll en navegadores WebKit (Chrome, Edge, Safari) */
 
+  ::selection {
+    background-color: #22c55e;
+    color: white;
+  }
+
   ::-webkit-scrollbar {
     width: 8px;
     height: 8px;
   }
 
   ::-webkit-scrollbar-track {
-    background: #0D2F13;
+    background: #292524;
   }
 
   ::-webkit-scrollbar-thumb {
-    background: #14591D;
+    background: #44403c;
     border-radius: 10px;
   }
 

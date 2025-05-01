@@ -2,14 +2,19 @@ import { useEffect, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadPolygonShape } from "@tsparticles/shape-polygon";
 import { loadSlim } from "@tsparticles/slim";
+import { IOpacityAnimation, RangeValue, RecursivePartial } from "@tsparticles/engine";
 
 export function ParticlesShapes({
   backColor,
   shapeColor,
+  opacity,
+  opacityAnimation,
   idContainer,
 }: {
   backColor: string;
   shapeColor: string,
+  opacity: RangeValue,
+  opacityAnimation: RecursivePartial<IOpacityAnimation>,
   idContainer: string;
 }) {
   const [init, setInit] = useState(false);
@@ -47,21 +52,18 @@ export function ParticlesShapes({
               move: {
                 direction: "none",
                 enable: true,
-                outModes: { default: "bounce" },
+                outModes: { default: "out" },
                 random: false,
                 speed: 0.2,
                 straight: false,
               },
               number: {
                 density: { enable: true, height: 1000, width: 1000 },
-                value: 100,
+                value: 40,
               },
               opacity: {
-                value: { min: 0.3, max: 0.5 },
-                animation: {
-                  enable: true,
-                  speed: 0.5,
-                },
+                value: opacity,
+                animation: opacityAnimation
               },
               size: {
                 value: { min: 5, max: 20 },
@@ -108,9 +110,6 @@ export function ParticlesShapes({
           /* particlesLoaded={particlesLoaded} */
         />
       )}
-      {/* <div className="absolute top-0 left-0 z-10 flex items-center justify-center w-full h-full">
-        <p className="text-4xl font-bold text-white">FIGURAS</p>
-      </div> */}
     </div>
   );
 }

@@ -1,6 +1,6 @@
 export function Proyects() {
   return (
-    <section className="bg-pink-600 pt-14" id="Proyectos">
+    <section className="bg-pink-600 pt-14" id="proyectos">
       <h2>PROYECTOS</h2>
       <p className="text-xl font-semibold text-white">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi obcaecati

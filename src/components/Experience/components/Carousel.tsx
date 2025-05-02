@@ -1,44 +1,17 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
-import pro1 from "../../../assets/carousel/programming1.jpg";
-import pro2 from "../../../assets/carousel/programming2.jpg";
-import pro3 from "../../../assets/carousel/programming3.jpg";
-import aurora1 from "../../../assets/carousel/aurora1.png";
 import { IoIosArrowForward } from "react-icons/io";
 import { IoIosArrowBack } from "react-icons/io";
-
-const slides = [
-  {
-    bg: pro1,
-    content: "Slide 1",
-  },
-  {
-    bg: aurora1,
-    content: "Slide 2",
-  },
-  {
-    bg: pro2,
-    content: "Slide 3",
-  },
-  {
-    bg: pro1,
-    content: "Slide 4",
-  },
-  {
-    bg: aurora1,
-    content: "Slide 5",
-  },
-  {
-    bg: pro3,
-    content: "Slide 6",
-  },
-];
+import { slides } from "../data/slides";
+import { useModal } from "../../../stores/Modal/modalStore";
+import { ModalBody } from "../components/ModalBody";
 
 export function Carousel() {
   const [index, setIndex] = useState(0);
+  const { setModal } = useModal();
 
   const totalSlides = slides.length;
-  const visibleDots = 6;
+  const visibleDots = 1;
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -79,7 +52,7 @@ export function Carousel() {
           key={index}
           className="absolute top-0 left-0 w-full h-full"
           style={{
-            backgroundImage: `url(${slides[index].bg})`,
+            backgroundImage: `url(${slides[index].imgFondo})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
@@ -98,9 +71,63 @@ export function Carousel() {
           }}
         >
           <div
-            className={`absolute inset-0 flex text-white items-center justify-center text-3xl bg-black bg-opacity-40`}
+            className={`absolute inset-0 z-10 flex items-center justify-center bg-black bg-opacity-40`}
           >
-            {slides[index].content}
+            {/* GRADIENTE NEGRO DE ARRIBA A ABAJO */}
+            <div className="absolute top-0 left-0 z-0 w-full h-full bg-gradient-to-b from-black/60 to-transparent"></div>
+            <div className="relative z-10 flex w-3/4 gap-8 h-fit">
+              <div className="flex items-center justify-center flex-1">
+                {/* LOGO DE LA EMPRESA */}
+                <div className="w-full h-fit">
+                  <img src={slides[index].logo} className="w-full h-full" />
+                </div>
+              </div>
+
+              <div className="flex flex-col w-3/4 gap-4 h-fit">
+                {/* FUNCIÓN QUE REALIZASTE */}
+                <p className="text-3xl font-semibold text-white">
+                  {slides[index].funcion}
+                </p>
+
+                {/* DESCRIPCIÓN DE LO QUE HICISTE */}
+                <div className="w-fit h-fit">
+                  <p className="text-lg text-justify text-white">
+                    {slides[index].descripcion[0]}
+                  </p>
+                </div>
+
+                {/* BOTÓN PARA VER MÁS */}
+                <div>
+                  <motion.button
+                    className={`text-lg rounded-lg py-2 px-4 shadow-md shadow-black/30 font-medium`}
+                    style={{
+                      backgroundColor: slides[index].colorEmpresa,
+                      color: slides[index].colorLetraEmpresa,
+                    }}
+                    onClick={() =>
+                      setModal(
+                        true,
+                        <div className="flex items-center gap-2 text-lg w-fit h-fit">
+                          <img
+                            src={slides[index].logo}
+                            className="h-8 p-2 w-fit"
+                          />
+                          <p className="font-bold text-white">
+                            {slides[index].funcion}
+                          </p>
+                        </div>,
+                        <ModalBody descripcion={slides[index].descripcion} />,
+                        slides[index].colorEmpresa
+                      )
+                    }
+                    whileHover={{ opacity: 0.8 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 20 }} // Controla la velocidad y suavidad del efecto
+                  >
+                    Ver más
+                  </motion.button>
+                </div>
+              </div>
+            </div>
           </div>
         </motion.div>
       </AnimatePresence>

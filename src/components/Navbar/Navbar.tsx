@@ -3,7 +3,7 @@ import { buttons } from "./data/buttons";
 import { LiaFileDownloadSolid } from "react-icons/lia";
 import { IoLogoGithub } from "react-icons/io";
 import { FaLinkedin } from "react-icons/fa";
-import logo from "../../../public/personal-logo.svg";
+import logo from "/personal-logo.svg";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);

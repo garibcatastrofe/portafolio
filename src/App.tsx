@@ -1,5 +1,6 @@
 import "./index.css";
 import { Navbar } from "./components/Navbar/Navbar";
+import { Modal } from './components/General/Modal/Modal'
 import { Header } from "./components/Header/Header";
 import { Presentation } from "./components/Presentation/Presentation";
 import { Experience } from "./components/Experience/Experience";
@@ -11,6 +12,7 @@ function App() {
   return (
     <main className="flex flex-col items-center justify-center w-full min-h-screen overflow-hidden">
       <Navbar />
+      <Modal />
       <div className="relative w-full h-screen overflow-hidden"  id="inicio">
         <Header />
         <TextoDinamico />

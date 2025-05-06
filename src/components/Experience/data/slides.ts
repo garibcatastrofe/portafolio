@@ -1,11 +1,8 @@
-/* import pro1 from "../../../assets/carousel/bg/programming1.jpg";
-import pro2 from "../../../assets/carousel/bg/programming2.jpg";
-import pro3 from "../../../assets/carousel/bg/programming3.jpg";
-import aurora1 from "../../../assets/carousel/bg/aurora1.png"; */
 import xfitLogo from "../../../assets/carousel/logo/logo_svg_blancas.svg";
 import xfitBg from "../../../assets/carousel/bg/xfitBg.webp";
+import searchingBg from "../../../assets/carousel/bg/searching.jpg";
 
-export const slides = [
+export const slides: Slide[] = [
   {
     nombreEmpresa: "X-FIT",
     funcion: "Desarrollador full-stack",
@@ -19,5 +16,35 @@ export const slides = [
     logo: xfitLogo,
     colorEmpresa: "#dc2626",
     colorLetraEmpresa: "#ffffff",
+    mostrarBoton: true,
+    tieneLogo: true,
+    tieneFuncion: true,
+  },
+  {
+    nombreEmpresa: "",
+    funcion: "En un futuro...",
+    descripcion: [
+      "Estate al tanto de mis nuevas experiencias, si eres una empresa o deseas crear algo nuevo, emocionante y que te lleve al éxito, no dudes en contactarme, ¡Crearemos cosas grandes!",
+    ],
+    imgFondo: searchingBg,
+    logo: "",
+    colorEmpresa: "",
+    colorLetraEmpresa: "",
+    mostrarBoton: false,
+    tieneLogo: false,
+    tieneFuncion: true,
   },
 ];
+
+interface Slide {
+  nombreEmpresa: string;
+  funcion: string;
+  descripcion: string[];
+  imgFondo: string;
+  logo: string;
+  colorEmpresa: string;
+  colorLetraEmpresa: string;
+  mostrarBoton: boolean;
+  tieneLogo: boolean;
+  tieneFuncion: boolean;
+}

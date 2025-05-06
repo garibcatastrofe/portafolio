@@ -11,7 +11,7 @@ export function Carousel() {
   const { setModal } = useModal();
 
   const totalSlides = slides.length;
-  const visibleDots = 1;
+  const visibleDots = 2;
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -76,56 +76,76 @@ export function Carousel() {
             {/* GRADIENTE NEGRO DE ARRIBA A ABAJO */}
             <div className="absolute top-0 left-0 z-0 w-full h-full bg-gradient-to-b from-black/60 to-transparent"></div>
             <div className="relative z-10 flex w-3/4 gap-8 h-fit">
-              <div className="flex items-center justify-center flex-1">
-                {/* LOGO DE LA EMPRESA */}
-                <div className="w-full h-fit">
-                  <img src={slides[index].logo} className="w-full h-full" />
+              {slides[index].tieneLogo && (
+                <div className="flex items-center justify-center flex-1">
+                  {/* LOGO DE LA EMPRESA */}
+                  <div className="w-full h-fit">
+                    <img src={slides[index].logo} className="w-full h-full" />
+                  </div>
                 </div>
-              </div>
+              )}
 
-              <div className="flex flex-col w-3/4 gap-4 h-fit">
-                {/* FUNCIÓN QUE REALIZASTE */}
-                <p className="text-3xl font-semibold text-white">
-                  {slides[index].funcion}
-                </p>
+              <div
+                className={`flex flex-col gap-4 h-fit ${
+                  slides[index].tieneLogo ? "w-3/4" : "w-full"
+                }`}
+              >
+                {slides[index].tieneFuncion && (
+                  <>
+                    {/* FUNCIÓN QUE REALIZASTE */}
+                    <p className="text-3xl font-semibold text-white">
+                      {slides[index].funcion}
+                    </p>
+                  </>
+                )}
 
                 {/* DESCRIPCIÓN DE LO QUE HICISTE */}
                 <div className="w-fit h-fit">
-                  <p className="text-lg text-justify text-white">
+                  <p
+                    className={`text-justify text-white ${
+                      slides[index].tieneLogo ? "text-lg" : "text-2xl"
+                    }`}
+                  >
                     {slides[index].descripcion[0]}
                   </p>
                 </div>
 
-                {/* BOTÓN PARA VER MÁS */}
-                <div>
-                  <motion.button
-                    className={`text-lg rounded-lg py-2 px-4 shadow-md shadow-black/30 font-medium`}
-                    style={{
-                      backgroundColor: slides[index].colorEmpresa,
-                      color: slides[index].colorLetraEmpresa,
-                    }}
-                    onClick={() =>
-                      setModal(
-                        true,
-                        <div className="flex items-center gap-2 text-lg w-fit h-fit">
-                          <img
-                            src={slides[index].logo}
-                            className="h-8 p-2 w-fit"
-                          />
-                          <p className="font-bold text-white">
-                            {slides[index].funcion}
-                          </p>
-                        </div>,
-                        <ModalBody descripcion={slides[index].descripcion} />,
-                        slides[index].colorEmpresa
-                      )
-                    }
-                    whileHover={{ opacity: 0.8 }}
-                    transition={{ type: "spring", stiffness: 300, damping: 20 }} // Controla la velocidad y suavidad del efecto
-                  >
-                    Ver más
-                  </motion.button>
-                </div>
+                {slides[index].mostrarBoton && (
+                  <div>
+                    {/* BOTÓN PARA VER MÁS */}
+                    <motion.button
+                      className={`text-lg rounded-lg py-2 px-4 shadow-md shadow-black/30 font-medium`}
+                      style={{
+                        backgroundColor: slides[index].colorEmpresa,
+                        color: slides[index].colorLetraEmpresa,
+                      }}
+                      onClick={() =>
+                        setModal(
+                          true,
+                          <div className="flex items-center gap-2 text-lg w-fit h-fit">
+                            <img
+                              src={slides[index].logo}
+                              className="h-8 p-2 w-fit"
+                            />
+                            <p className="font-bold text-white">
+                              {slides[index].funcion}
+                            </p>
+                          </div>,
+                          <ModalBody descripcion={slides[index].descripcion} />,
+                          slides[index].colorEmpresa
+                        )
+                      }
+                      whileHover={{ opacity: 0.8 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 300,
+                        damping: 20,
+                      }} // Controla la velocidad y suavidad del efecto
+                    >
+                      Ver más
+                    </motion.button>
+                  </div>
+                )}
               </div>
             </div>
           </div>

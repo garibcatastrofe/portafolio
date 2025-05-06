@@ -2,18 +2,17 @@ import {
   motion,
   useAnimation /* useScroll, useTransform */,
 } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { useEffect /* , useRef */ } from "react";
 import { useInView } from "react-intersection-observer";
 import me from "../../assets/me.png";
 import "../../animations.css";
-
 
 export function Presentation() {
   const controls = useAnimation();
   const [ref, inView] = useInView({ triggerOnce: false });
   const colorGreen = "text-white";
 
-  const referencia = useRef(null);
+  /* const referencia = useRef(null); */
   /* const { scrollYProgress } = useScroll({
     target: referencia,
     offset: ["start end", "end start"], // Cuando entra y sale de pantalla
@@ -35,11 +34,9 @@ export function Presentation() {
 
   return (
     <section
-      className="flex items-center w-full h-fit py-36 bg-gradient-to-br from-[#138e5b] via-[#01474b] to-[#000a2a]"
-      ref={referencia}
-      
+      className="flex items-center w-full h-screen bg-gradient-to-br from-[#138e5b] via-[#01474b] to-[#000a2a]"
+      /* ref={referencia} */
     >
-      
       {/* Rectángulo superior */}
       {/* <motion.div
         style={{
